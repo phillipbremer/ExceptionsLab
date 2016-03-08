@@ -18,10 +18,14 @@ public class NameService {
      * fewer than two parts
      */
     public String extractLastName(String fullName) {
-        String lastName = null;
         
-        // write your code here to extract the lastName and store in the
-        // above local variable
+        String splitter[] = fullName.split(" ");
+        String lastName = splitter[1];
+        if(lastName == null || lastName.isEmpty()){
+            throw new IllegalArgumentException("Sorry, last name can't be empty or null.");
+        } else if(splitter.length < 1){
+            throw new ArrayIndexOutOfBoundsException("");
+        }else{}
         
         return lastName;
     }

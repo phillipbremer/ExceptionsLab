@@ -21,6 +21,8 @@ public class Employee {
     private String lastName;
     private String ssn;
     private int daysVacation;
+    private final int MIN_LAST_NAME = 1;
+    private final int MIN_FIRST_NAME = 2;
 
     public Employee() {
         // initialize a bunch of default values
@@ -45,21 +47,31 @@ public class Employee {
         this.daysVacation = daysVacation;
     }
 
-    public String getFirstName() {
+    public final String getFirstName() {
         return firstName;
     }
 
-    public final void setFirstName(String firstName) {
-       
+    //cannot be null or empty and greater than or equal to 2 chars
+    public final void setFirstName(String firstName) throws IllegalArgumentException{
+       if(firstName == null || firstName.isEmpty() || firstName.length() 
+               <= MIN_FIRST_NAME){
+           throw new IllegalArgumentException("First name cannot be shorter than"
+                   + " 2 characters.");
+       }
         this.firstName = firstName;
     }
 
-    public String getLastName() {
+    public final String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        
+    //cannot be null or empty and must be greater or equal to 1
+    public final void setLastName(String lastName) throws IllegalArgumentException{
+        if(lastName == null || lastName.isEmpty() || lastName.length() 
+                <= MIN_LAST_NAME){
+            throw new IllegalArgumentException("Last name cannot be shorter than"
+                    + " 1 character.");
+        }
         this.lastName = lastName;
     }
 

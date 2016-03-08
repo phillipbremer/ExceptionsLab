@@ -17,7 +17,8 @@ public class NameService {
      * @throws IllegalArgumentException if fullName is null or empty or has 
      * fewer than two parts
      */
-    public String extractLastName(String fullName) {
+    public String extractLastName(String fullName) throws 
+            IllegalArgumentException, ArrayIndexOutOfBoundsException{
         
         String splitter[] = fullName.split(" ");
         String lastName = splitter[1];

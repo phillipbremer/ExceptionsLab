@@ -16,6 +16,8 @@ import javax.swing.JOptionPane;
  */
 public class Challenge1 {
     private static final int LAST_NAME_IDX = 1;
+    //private String name;
+    //private String lastName;
 
     public static void main(String[] args) {
         Challenge1 app = new Challenge1();
@@ -32,9 +34,10 @@ public class Challenge1 {
     // it there.
     public String extractLastName(String fullName) throws 
             ArrayIndexOutOfBoundsException, IllegalArgumentException{
-        String lastName = null;
+        
         String splitter[] = fullName.split(" ");
-        lastName = splitter[1];
+        String lastName = splitter[1];
+        //name = fullName.split(" ");
         if(lastName == null || lastName.isEmpty()){
             throw new IllegalArgumentException("Sorry, last name can't be empty or null.");
         } else if(splitter.length < 1){

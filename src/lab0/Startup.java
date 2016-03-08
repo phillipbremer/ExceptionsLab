@@ -2,7 +2,7 @@ package lab0;
 
 /**
  *
- * @author Instlogin
+ * @author pbremer
  */
 public class Startup {
 

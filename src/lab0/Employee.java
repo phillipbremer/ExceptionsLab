@@ -13,8 +13,7 @@ package lab0;
  * method arguments and throw IllegalArgumentException or a custom
  * exception if the validation fails.
  * 
- * @author  Jim Lombardo, jlombardo@wctc.edu
- * @version 1.00
+ * @author  pbremer
  */
 public class Employee {
     public static final int MAX_VACATION_DAYS = 28;

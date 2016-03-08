@@ -12,8 +12,7 @@ import javax.swing.JOptionPane;
  * message in a JOptionPane and ask the user to try again. (Yes, this violates 
  * the Single Responsibility Principle, but for this lab, we'll overlook that.)
  * 
- * @author  Jim Lombardo, jlombardo@wctc.edu
- * @version 1.00
+ * @author  pbremer
  */
 public class Challenge1 {
     private static final int LAST_NAME_IDX = 1;

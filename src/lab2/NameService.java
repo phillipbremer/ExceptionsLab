@@ -4,8 +4,7 @@ package lab2;
  * This class provides various services relating to name manipulation.
  * No output should be performed here.
  * 
- * @author  Jim Lombardo, jlombardo@wctc.edu
- * @version 1.00
+ * @author  pbremer
  */
 public class NameService {
     

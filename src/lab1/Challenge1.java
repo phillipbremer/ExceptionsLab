@@ -30,10 +30,16 @@ public class Challenge1 {
     // Use exception handling to prevent a crash in the event that fullName
     // is null or empty. Throw the exception the calling method. and handle
     // it there.
-    public String extractLastName(String fullName) {
+    public String extractLastName(String fullName) throws 
+            ArrayIndexOutOfBoundsException, IllegalArgumentException{
         String lastName = null;
-        
-        // Your code goes here. Assign your value to lastName
+        String splitter[] = fullName.split(" ");
+        lastName = splitter[1];
+        if(lastName == null || lastName.isEmpty()){
+            throw new IllegalArgumentException("Sorry, last name can't be empty or null.");
+        } else if(splitter.length < 1){
+            throw new ArrayIndexOutOfBoundsException("");
+        }else{}
         
         return lastName;
     }

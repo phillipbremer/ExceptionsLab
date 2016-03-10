@@ -6,8 +6,7 @@ package lab3;
  * <p>
  * No input or output should be performed here.
  * 
- * @author  Jim Lombardo, jlombardo@wctc.edu
- * @version 1.00
+ * @author pbremer
  */
 public class Challenge3 {
 

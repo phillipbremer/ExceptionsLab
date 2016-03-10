@@ -36,14 +36,17 @@ public class Employee {
         setFirstName(firstName);
         setLastName(lastName);
         setSsn(ssn);
-        this.daysVacation = daysVacation;
+        setDaysVacation(daysVacation);
     }
     
-    public int getDaysVacation() {
+    public final int getDaysVacation() {
         return daysVacation;
     }
 
-    public void setDaysVacation(int daysVacation) {
+    public final void setDaysVacation(int daysVacation) throws IllegalArgumentException{
+        if(daysVacation < 0 || daysVacation > MAX_VACATION_DAYS){
+            throw new IllegalArgumentException("Vacation days cannot be less than 0 or greater than " + MAX_VACATION_DAYS);
+        }
         this.daysVacation = daysVacation;
     }
 
@@ -79,8 +82,8 @@ public class Employee {
         return ssn;
     }
 
-    public void setSsn(String ssn) {
-        
+    public final void setSsn(String ssn) {
+        //not required for this assignment due to its complexity
         this.ssn = ssn;
     }
     

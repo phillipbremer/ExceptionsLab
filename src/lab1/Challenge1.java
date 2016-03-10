@@ -24,26 +24,37 @@ public class Challenge1 {
         
         String fullName = JOptionPane.showInputDialog("Enter full name (use Format: first last):");
         String lastName = app.extractLastName(fullName);
-        String msg = "Your last name is: " + lastName;
-        JOptionPane.showMessageDialog(null, msg);
+        try{
+            lastName = app.extractLastName(fullName);
+            String msg = "To the best of our knowledge, your last name is: " + lastName;
+            JOptionPane.showMessageDialog(null, msg);
+        } catch(IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
     
     // write the code to extract the lastName from the fullName
     // Use exception handling to prevent a crash in the event that fullName
     // is null or empty. Throw the exception the calling method. and handle
     // it there.
-    public String extractLastName(String fullName) throws 
-            ArrayIndexOutOfBoundsException, IllegalArgumentException{
+    public String extractLastName(String fullName) throws IllegalArgumentException{
         
-        String splitter[] = fullName.split(" ");
-        String lastName = splitter[1];
+        String lastName = null;
+        String[] parts = null;
+        if(fullName == null || fullName.isEmpty() || fullName.split(" ").length < 2){
+            throw new IllegalArgumentException("Sorry, full name must contain both first and last name.");
+        }
+        parts = fullName.split(" ");
+        lastName = parts[parts.length-1];
+//        String splitter[] = fullName.split(" ");
+//        String lastName = splitter[1];
         //name = fullName.split(" ");
-        if(lastName == null || lastName.isEmpty()){
-            throw new IllegalArgumentException("Sorry, last name can't be empty or null.");
-        } else if(splitter.length < 1){
-            throw new ArrayIndexOutOfBoundsException("");
-        }else{}
-        
+//        if(lastName == null || lastName.isEmpty()){
+//            throw new IllegalArgumentException("Sorry, last name can't be empty or null.");
+//        } else if(splitter.length < 1){
+//            throw new ArrayIndexOutOfBoundsException("");
+//        }else{}
+//        
         return lastName;
     }
 

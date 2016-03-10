@@ -17,16 +17,15 @@ public class NameService {
      * @throws IllegalArgumentException if fullName is null or empty or has 
      * fewer than two parts
      */
-    public String extractLastName(String fullName) throws 
-            IllegalArgumentException, ArrayIndexOutOfBoundsException{
+    public String extractLastName(String fullName) throws IllegalArgumentException{
         
-        String splitter[] = fullName.split(" ");
-        String lastName = splitter[1];
-        if(lastName == null || lastName.isEmpty()){
-            throw new IllegalArgumentException("Sorry, last name can't be empty or null.");
-        } else if(splitter.length < 1){
-            throw new ArrayIndexOutOfBoundsException("");
-        }else{}
+        String lastName = null;
+        String[] parts = null;
+        if(fullName == null || fullName.isEmpty() || fullName.split(" ").length < 2){
+            throw new IllegalArgumentException("Sorry, full name must contain both first and last name.");
+        }
+        parts = fullName.split(" ");
+        lastName = parts[parts.length-1];
         
         return lastName;
     }
